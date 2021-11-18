@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 
-const Button = ({ text }) => {
+const Button = ({ text, onClick }) => {
     return (
-        <button>
+        <button onClick={onClick}>
             {text}
         </button>
     )
@@ -11,6 +11,7 @@ const Button = ({ text }) => {
 Button.defaultProps = {
     text: "Login",
     color: 'DarkSlateGray',
+    onClick : "",
 }
 
 Button.propTypes = {
