@@ -1,9 +1,9 @@
-import Header from './Header'
+import Header from './Header';
 
-const Dashboard = () => {
+const Dashboard = ( username ) => {
     return (
         <div className="Dashboard">
-            <Header title= "Dashboard"/>
+            <Header title = {username.username ? 'Hello ' + username.username : "You are not logged in"}/>
         </div>
     )
 }

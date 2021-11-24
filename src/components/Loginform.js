@@ -12,7 +12,7 @@ const Loginform = () => {
 
         e.preventDefault()
 
-        axios.post("http://localhost:8000/api/login",
+        await axios.post("http://localhost:8000/api/login",
             {
             email: username,
             password: password
