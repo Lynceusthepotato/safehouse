@@ -3,26 +3,27 @@ import { Navigate } from 'react-router-dom'
 import axios from 'axios';
 import Header from './Header'
 
-const Loginform = () => {
+const Registerform = () => {
     const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [isLogin, setIsLogin] = useState(false)
+    const [isRegister, setIsRegister] = useState(false)
     
     const onSubmit = async (e) => {
 
         e.preventDefault()
 
-        axios.post("http://localhost:8000/api/login",
+        await axios.post("http://localhost:8000/api/register",
             {
-            email: username,
+            name: username,
+            email: email,
             password: password
-            },
-            { withCredentials: true }
+            }
         ).then(res => {
             if (res.data.status === 'fail'){
             alert("Your email and password is wrong :v")
             } else {
-            setIsLogin(isLogin => !isLogin)
+            setIsRegister(isRegister => !isRegister)
             }
             // console.log(res)
             // console.log(res.data)
@@ -32,15 +33,16 @@ const Loginform = () => {
           
     }
 
-    if (isLogin) {
-        return <Navigate to= "/dashboard" />
+    if (isRegister) {
+        return <Navigate to= "/login" />
     }
 
     return (
-        <div className="loginForm">
+        <div className="registerForm">
             <Header />
-            <form id= "LoginForm" onSubmit={onSubmit}>
+            <form id= "registerForm" onSubmit={onSubmit}>
                 <input type="text" className="input-field" placeholder= "Username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+                <input type="text" className="input-field" placeholder= "Email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 <input type="text" className="input-field" placeholder= "Password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <input type="submit" className="submit-btn" id="login" value= "login"/>  
             </form>
@@ -48,4 +50,4 @@ const Loginform = () => {
     )
 }
 
-export default Loginform
+export default Registerform
