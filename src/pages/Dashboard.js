@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Header from './Header';
+import Header from '../components/Header';
 
 const Dashboard = ( username ) => {
     const [redirect, setRedirect] = useState(false)
@@ -26,7 +26,7 @@ const Dashboard = ( username ) => {
                 })
             }
         )();
-      });
+      }, []);
 
     document.body.style.background = "#fff"
     

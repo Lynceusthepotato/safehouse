@@ -2,10 +2,11 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Loginform from './components/Loginform';
-import Frontpage from './components/Frontpage';
-import Dashboard from './components/Dashboard';
-import Registerform from './components/Registerform';
+import Loginform from './pages/Loginform';
+import Frontpage from './pages/Frontpage';
+import Dashboard from './pages/Dashboard';
+import Registerform from './pages/Registerform';
+import Navbar from './components/Navbar';
 
 function App() {  
   const [username, setUsername] = useState('')
@@ -25,20 +26,27 @@ function App() {
                 } else if (error.request) {
                   console.log(error.request);
                 } else {
-                  console.log(error, error.res)
+                  console.log(error, error.res);
                 }
             })
         }
     )();
   });
 
+  const logout =  async () => {
+    await fetch('http://localhost:8000/api/logout', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      credentials: 'include',
+    });
+  }
 
   return (
     <Routes>
       <Route path="/" exact element={<Frontpage />} />
       <Route path="/login" element={<Loginform setUser={setUsername} />} />
       <Route path="/register" element={<Registerform />} />
-      <Route path="/dashboard" element={<Dashboard username={username} />} />
+      <Route path="/dashboard" element={<><Navbar logout={logout} /> <Dashboard username={username} /></>} />
     </Routes>
   );
 }

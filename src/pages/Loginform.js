@@ -1,35 +1,39 @@
 import { useState, useEffect } from 'react'
 import { Navigate, Link } from 'react-router-dom'
 import axios from 'axios';
-import Header from './Header'
+import Header from '../components/Header'
 
 const Loginform = ( {setUser} ) => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [isLogin, setIsLogin] = useState(false)
 
-    useEffect(() => {
-        (
-            async () => {
-                await axios.get('http://localhost:8000/api/user', {
-                    withCredentials: true
-                }).then(res => {
-                  alert("You are already logged in");
-                  setIsLogin(isLogin => !isLogin)
-                }).catch(error => {
-                    if (error.response) {
-                      console.log(error.response.data);
-                      console.log(error.response.status);
-                      console.log(error.response.headers);
-                    } else if (error.request) {
-                      console.log(error.request);
-                    } else {
-                      console.log(error, error.res)
-                    }
-                })
-            }
-        )();
-      });
+    // useEffect(() => {
+    //     (
+    //         async () => {
+    //             await axios.get('http://localhost:8000/api/user', {
+    //                 withCredentials: true
+    //             }).then(res => {
+    //                 if (res.status === 200){
+    //                     alert("You are already logged in");
+    //                     setIsLogin(isLogin => !isLogin)
+    //                 } else {
+    //                     console.log(res)
+    //                 }                    
+    //             }).catch(error => {
+    //                 if (error.response) {
+    //                   console.log(error.response.data);
+    //                   console.log(error.response.status);
+    //                   console.log(error.response.headers);
+    //                 } else if (error.request) {
+    //                   console.log(error.request);
+    //                 } else {
+    //                   console.log(error, error.res)
+    //                 }
+    //             })
+    //         }
+    //     )();
+    //   }, []);
 
     
     const onSubmit = async (e) => {

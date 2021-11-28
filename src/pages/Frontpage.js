@@ -1,5 +1,5 @@
-import Header from "./Header";
-import Button from "./Button";
+import Header from "../components/Header";
+import Button from "../components/Button";
 import { Link } from 'react-router-dom'
 
 const Frontpage = () => {
