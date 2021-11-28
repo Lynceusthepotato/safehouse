@@ -1,12 +1,36 @@
-import { useState } from 'react'
-import { Navigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Navigate, Link } from 'react-router-dom'
 import axios from 'axios';
 import Header from './Header'
 
-const Loginform = () => {
+const Loginform = ( {setUser} ) => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [isLogin, setIsLogin] = useState(false)
+
+    useEffect(() => {
+        (
+            async () => {
+                await axios.get('http://localhost:8000/api/user', {
+                    withCredentials: true
+                }).then(res => {
+                  alert("You are already logged in");
+                  setIsLogin(isLogin => !isLogin)
+                }).catch(error => {
+                    if (error.response) {
+                      console.log(error.response.data);
+                      console.log(error.response.status);
+                      console.log(error.response.headers);
+                    } else if (error.request) {
+                      console.log(error.request);
+                    } else {
+                      console.log(error, error.res)
+                    }
+                })
+            }
+        )();
+      });
+
     
     const onSubmit = async (e) => {
 
@@ -20,12 +44,11 @@ const Loginform = () => {
             { withCredentials: true }
         ).then(res => {
             if (res.data.status === 'fail'){
-            alert("Your email and password is wrong :v")
+                alert("Your email and password is wrong :v")
             } else {
-            setIsLogin(isLogin => !isLogin)
+                setUser(res.data.name)
+                setIsLogin(isLogin => !isLogin)
             }
-            // console.log(res)
-            // console.log(res.data)
         }).catch(error => {
             console.log(error, error.res)
         })
@@ -36,14 +59,17 @@ const Loginform = () => {
         return <Navigate to= "/dashboard" />
     }
 
+    document.body.style.background = "linear-gradient(#53c1a9, #fff)"
+
     return (
-        <div className="loginForm">
+        <div className="form-box">
             <Header />
             <form id= "LoginForm" onSubmit={onSubmit}>
                 <input type="text" className="input-field" placeholder= "Username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
                 <input type="text" className="input-field" placeholder= "Password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <input type="submit" className="submit-btn" id="login" value= "login"/>  
             </form>
+            <p className ="below"> Don't have an account yet? <Link to="/register"> Register </Link></p>   
         </div>
     )
 }

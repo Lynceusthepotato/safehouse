@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Navigate } from 'react-router-dom'
+import { Navigate, Link } from 'react-router-dom'
 import axios from 'axios';
 import Header from './Header'
 
@@ -25,8 +25,6 @@ const Registerform = () => {
             } else {
             setIsRegister(isRegister => !isRegister)
             }
-            // console.log(res)
-            // console.log(res.data)
         }).catch(error => {
             console.log(error, error.res)
         })
@@ -36,16 +34,19 @@ const Registerform = () => {
     if (isRegister) {
         return <Navigate to= "/login" />
     }
+    
+    document.body.style.background = "linear-gradient(#53c1a9, #fff)"
 
     return (
-        <div className="registerForm">
+        <div className="form-box">
             <Header />
             <form id= "registerForm" onSubmit={onSubmit}>
                 <input type="text" className="input-field" placeholder= "Username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
                 <input type="text" className="input-field" placeholder= "Email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 <input type="text" className="input-field" placeholder= "Password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                <input type="submit" className="submit-btn" id="login" value= "login"/>  
+                <input type="submit" className="submit-btn" id="register" value= "register"/>  
             </form>
+            <p className ="below"> Already have an account?<Link to="/login"> Login </Link></p>   
         </div>
     )
 }

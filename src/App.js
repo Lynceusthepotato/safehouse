@@ -17,9 +17,16 @@ function App() {
                 withCredentials: true
             }).then(res => {
               setUsername(res.data.name);
-              console.log(res.data.name);
             }).catch(error => {
-              console.log(error, error.res)
+                if (error.response) {
+                  console.log(error.response.data);
+                  console.log(error.response.status);
+                  console.log(error.response.headers);
+                } else if (error.request) {
+                  console.log(error.request);
+                } else {
+                  console.log(error, error.res)
+                }
             })
         }
     )();
@@ -29,7 +36,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" exact element={<Frontpage />} />
-      <Route path="/login" element={<Loginform />} />
+      <Route path="/login" element={<Loginform setUser={setUsername} />} />
       <Route path="/register" element={<Registerform />} />
       <Route path="/dashboard" element={<Dashboard username={username} />} />
     </Routes>
