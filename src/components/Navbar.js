@@ -3,6 +3,8 @@ import * as AiIcons from "react-icons/ai";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NavbarData } from "./NavbarData";
+import { IconContext } from 'react-icons';
+import './Navbar.css';
 
 function Navbar( {logout} ) {
     const [sidebar, setSidebar] = useState(false);
@@ -11,13 +13,14 @@ function Navbar( {logout} ) {
     
     return (
         <div>
+            <IconContext.Provider value={{color:"white"}}>
             <div className="navbar">
                 <Link to= "#" className="menu-button">
                     <FaIcons.FaBars onClick = {showSidebar}/>
                 </Link>
             </div>
-            <nav className= {sidebar ? "navOn" : "NavOff"}>
-                <ul className = "nav-items" onClick={showSidebar}>
+            <nav className= {sidebar ? "nav-menu active" : "nav-menu"}>
+                <ul className = "nav-menu-items" onClick={showSidebar}>
                     <li className = "navbar-toggle">
                         <Link to= "#" className="menu-button">
                             <AiIcons.AiOutlineClose />
@@ -43,6 +46,7 @@ function Navbar( {logout} ) {
                     })}
                 </ul>
             </nav>
+            </IconContext.Provider>
         </div>
     )
 }

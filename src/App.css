@@ -14,12 +14,50 @@ body{
   transition: 0.5s;
   min-height: 100%;
   background: #fff;
+  background-attachment:fixed;
 }
 
+/* FrontPage */
+.FrontPage{
+  position: relative;
+}
+
+.Top{
+  position: relative;
+  background-color:#7e7f7a;
+  padding: 10%;
+  text-align: center;
+  color: #fff;
+}
+
+.Top p{
+  margin-top: 5%;
+}
+
+.Bottom {
+  background-color:#53c1a9;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.Head{
+  padding: 50px;
+  margin-bottom: 20px;
+}
+
+.Fins, .Sins, .Tins{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 20%;
+}
+
+/* Login and Register */
 .form-box{
-  font-family: "Bungee";
-  width: 380px;
-  height: 480px;
+  width: 80%;
+  height: 60%;
   position: relative;
   margin: 30% auto;
   background: #fff;
@@ -47,13 +85,9 @@ body{
   padding: 10px 30px;
   cursor: pointer;
   display: block;
-  margin: auto;
+  margin: 10% 10%;
   background: linear-gradient(to right, #53c1a9, #53c1a9);
   border: 0;
   outline: none;
   border-radius: 30px;
-}
-
-.Dashboard {
-  padding: 20%;
 }

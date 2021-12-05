@@ -35,7 +35,12 @@ const Dashboard = ( username ) => {
     }
     return (
         <div className="Dashboard">
-            <Header title = {username.username ? 'Hello ' + username.username : "You are not logged in"}/>
+            <div className="up">
+                <Header title = {username.username ? 'Hello ' + username.username : "You are not logged in"}/>
+            </div>
+            <div className="down">
+                <Header title = {"Notifications"} />
+            </div>
         </div>
     )
 }

@@ -35,7 +35,7 @@ const Registerform = () => {
         return <Navigate to= "/login" />
     }
     
-    document.body.style.background = "linear-gradient(#53c1a9, #fff)"
+    document.body.style.backgroundImage = "linear-gradient(#53c1a9, #fff)"
 
     return (
         <div className="form-box">
@@ -44,7 +44,7 @@ const Registerform = () => {
                 <input type="text" className="input-field" placeholder= "Username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
                 <input type="text" className="input-field" placeholder= "Email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 <input type="text" className="input-field" placeholder= "Password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                <input type="submit" className="submit-btn" id="register" value= "register"/>  
+                <input type="submit" className="submit-btn" id="register" value= "Register"/>  
             </form>
             <p className ="below"> Already have an account?<Link to="/login"> Login </Link></p>   
         </div>

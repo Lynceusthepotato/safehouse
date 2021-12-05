@@ -7,6 +7,7 @@ import Frontpage from './pages/Frontpage';
 import Dashboard from './pages/Dashboard';
 import Registerform from './pages/Registerform';
 import Navbar from './components/Navbar';
+import BottomNavbar from './components/BottomNavbar';
 
 function App() {  
   const [username, setUsername] = useState('')
@@ -46,7 +47,8 @@ function App() {
       <Route path="/" exact element={<Frontpage />} />
       <Route path="/login" element={<Loginform setUser={setUsername} />} />
       <Route path="/register" element={<Registerform />} />
-      <Route path="/dashboard" element={<><Navbar logout={logout} /> <Dashboard username={username} /></>} />
+      {/* If want to add side navbar just put <Navbar logout={logout} /> in the dashboard elements */}
+      <Route path="/dashboard" element={<><BottomNavbar /> <Dashboard username={username} /></>} />
     </Routes>
   );
 }

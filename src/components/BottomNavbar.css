@@ -1,0 +1,32 @@
+.BottomNav{
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+}
+
+.navLink{
+    display: inline-block;
+    margin-left: 6%;
+    margin-right: 6%;
+    overflow: hidden;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.navLink span{
+    vertical-align: top;
+    display:flex;
+    margin: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+     color: gray;
+}
