@@ -73,7 +73,7 @@ const Loginform = ( {setUser} ) => {
                 <input type="text" className="input-field" placeholder= "Password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <input type="submit" className="submit-btn" id="login" value= "Login"/>  
             </form>
-            <p className ="below"> Don't have an account yet? <Link to="/register"> Register </Link></p>   
+            <p className ="below"> Don't have an account yet? <Link className='regisLogin' to="/register"> Register </Link></p>   
         </div>
     )
 }

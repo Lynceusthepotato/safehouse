@@ -1,0 +1,31 @@
+.forFooter{
+    background-color:#53c1a9;
+    color:white;
+}
+
+.Foot{
+    margin-left: 5%;
+    margin-bottom: 5%;
+    font-size: small;
+}
+
+.cFooter{
+    display: flex;
+    position: relative;
+    justify-content: space-evenly;
+}
+
+.cFooter h1, a{
+    font-size: small;
+}
+
+.left a, .right a{
+    display: inline-block;
+    margin-left: 2%;
+    color:white;
+    /* color: blue; */
+}
+
+.left a :hover, .right a :hover{
+    color: black;
+}

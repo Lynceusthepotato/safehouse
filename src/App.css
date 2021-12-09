@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200&display=swap');
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto";
+  /* font-family: "Roboto"; */
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 html{
@@ -35,7 +38,7 @@ body{
 }
 
 .Bottom {
-  background-color:#53c1a9;
+  background-color:whitesmoke;
   position: relative;
   text-align: center;
   width: 100%;
@@ -52,6 +55,40 @@ body{
   align-items: center;
   justify-content: space-evenly;
   margin-bottom: 20%;
+}
+
+.slider-wrap{
+  padding:5%
+}
+
+.slider {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
+
+.slider-inner {
+  display: flex;
+  justify-content: space-around;
+  top: 0;
+  left: 0;
+  width: 1500px;
+  height: 100%;
+  display: flex;
+}
+
+.toSlide{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 100px;
+  top: 1%;
+  background-color: rgb(205, 205, 205);
+  border: 1px solid rgb(0, 0, 0);
 }
 
 /* Login and Register */
@@ -90,4 +127,8 @@ body{
   border: 0;
   outline: none;
   border-radius: 30px;
+}
+
+.regisLogin{
+  color: blue;
 }
