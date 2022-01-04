@@ -6,7 +6,7 @@ import Loginform from './pages/Loginform';
 import Frontpage from './pages/Frontpage';
 import Dashboard from './pages/Dashboard';
 import Registerform from './pages/Registerform';
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
 import BottomNavbar from './components/BottomNavbar';
 
 function App() {  

@@ -1,6 +1,9 @@
 import Header from "../components/Header";
 import Button from "../components/Button";
 import Footer from "../components/Footer.js";
+import pic1 from '../pictures/Doorbell1.jpeg';
+import pic2 from '../pictures/Doorbell2.png';
+import pic3 from '../pictures/Doorbell3.jpeg';
 import { Link } from 'react-router-dom'
 
 const Frontpage = () => {
@@ -43,8 +46,8 @@ const Frontpage = () => {
                 <Link to="/login"> 
                     <Button style={{
                         marginTop:'50px', 
-                        width: '22%',
-                        padding: '2% 5%',
+                        width: '200px',
+                        padding: '10px 20px',
                         cursor: 'pointer',
                         background: 'linear-gradient(to right, #53c1a9, #53c1a9)',
                         border: '0',
@@ -73,16 +76,19 @@ const Frontpage = () => {
                     <div className='slider'>
                         <div className='slider-inner'>
                             <div className='toSlide'>
-                                <p className='tS'> a </p>
+                                <img src={pic1} className= "FPic"/>
+                                <p className='tS'>  Sensor </p>
+                                <p className='bTS one'> Detect button pressed </p>
                             </div>
                             <div className='toSlide'>
-                                <p className='tS' > a </p>
+                                <img src={pic2} className= "FPic"/>
+                                <p className='tS'> Notifications </p>
+                                <p className='bTS two'> Recieve notifications on your phone everytime someone is by your door </p>
                             </div>
                             <div className='toSlide'>
-                                <p className='tS'> a </p>
-                            </div>
-                            <div className='toSlide'>
-                                <p className='tS'> a </p>
+                                <img src={pic3} className= "FPic"/>
+                                <p className='tS'> Live Stream </p>
+                                <p className='bTS three'> Stream live video when the doorbell button is pressed </p>
                             </div>
                         </div>
                     </div>

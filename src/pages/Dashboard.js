@@ -39,7 +39,7 @@ const Dashboard = ( username ) => {
                 <Header title = {username.username ? 'Hello ' + username.username : "You are not logged in"}/>
             </div>
             <div className="down">
-                <Header title = {"Notifications"} />
+                <Header title = {"Notifications"} className= "Notifications" />
             </div>
         </div>
     )
