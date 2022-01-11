@@ -8,6 +8,13 @@ import Dashboard from './pages/Dashboard';
 import Registerform from './pages/Registerform';
 // import Navbar from './components/Navbar';
 import BottomNavbar from './components/BottomNavbar';
+import Livepage from './pages/Livepage';
+import Settingpage from './pages/Settingpage';
+import Aboutpage from './pages/Aboutpage';
+import DataPolicy from './pages/DataPolicy';
+import HNS from './pages/HNS';
+import SFeedback from './pages/SFeedback';
+import TermOfUse from './pages/TermOfUse';
 
 function App() {  
   const [username, setUsername] = useState('')
@@ -49,6 +56,13 @@ function App() {
       <Route path="/register" element={<Registerform />} />
       {/* If want to add side navbar just put <Navbar logout={logout} /> in the dashboard elements */}
       <Route path="/dashboard" element={<><BottomNavbar /> <Dashboard username={username} /></>} />
+      <Route path="/live" element={<><BottomNavbar /> <Livepage /> </>} />
+      <Route path="/settings" element={<><BottomNavbar /> <Settingpage /></>} />
+      <Route path="/about" element={<><BottomNavbar /> <Aboutpage /></>} />
+      <Route path="/helpAndSupport" element={<><BottomNavbar /> <HNS /></>} />
+      <Route path="/sendFeedback" element={<><BottomNavbar /> <SFeedback /></>} />
+      <Route path="/dataPolicy" element={<><BottomNavbar /> <DataPolicy /></>} />
+      <Route path="/termOfUse" element={<><BottomNavbar /> <TermOfUse /></>} />
     </Routes>
   );
 }

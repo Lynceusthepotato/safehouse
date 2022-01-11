@@ -2,6 +2,7 @@ import { Navigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from '../components/Header';
+import pic2 from '../pictures/Doorbell2.png';
 
 const Dashboard = ( username ) => {
     const [redirect, setRedirect] = useState(false)
@@ -37,6 +38,7 @@ const Dashboard = ( username ) => {
         <div className="Dashboard">
             <div className="up">
                 <Header title = {username.username ? 'Hello ' + username.username : "You are not logged in"}/>
+                <img src={pic2} className ="Avatar"/>
             </div>
             <div className="down">
                 <Header title = {"Notifications"} className= "Notifications" />

@@ -130,6 +130,8 @@ body{
 /* Dashboard */
 .up {
   position: relative;
+  display: flex;
+  justify-content: space-around;
   background-color:#53c1a9;
   padding: 10%;
   text-align: center;
@@ -187,4 +189,43 @@ body{
 
 .regisLogin{
   color: blue;
+}
+
+/* Setting page */
+
+.Settings{
+  text-align: center;
+  font-size: 12px;
+  border-bottom: 0.01em solid;
+}
+
+.ForNameEmail{
+  color: black;
+}
+
+.Settingpage .Top{
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.Settingpage .Bottom{
+  border-top: 0.01em solid;
+  background-color: white;
+}
+
+.Linkto{  
+  display: flex;
+  margin: 20px;
+}
+
+.greenText {
+  color: green;
+  text-align: center;
+}
+
+.Avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
 }
