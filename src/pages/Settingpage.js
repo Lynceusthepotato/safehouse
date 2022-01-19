@@ -3,15 +3,15 @@ import Header from "../components/Header"
 import pic2 from '../pictures/Doorbell2.png';
 
 
-const Settingpage = () => {
+const Settingpage = ({username, email}) => {
     return (
         <div className="Settingpage">
             <Header title={"Settings"} className="Settings" />
             <div className="Top" >
                 <Link to="/editProfile" className="greenText"> Edit Profile</Link>
                 <div className="ForNameEmail">
-                    <p> username </p>
-                    <p> email </p>
+                    <p> {username} </p>
+                    <p> {email} </p>
                 </div>
                 <img src={pic2} className="Avatar" />
             </div>

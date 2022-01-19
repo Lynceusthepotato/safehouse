@@ -18,6 +18,7 @@ import TermOfUse from './pages/TermOfUse';
 
 function App() {  
   const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
 
   useEffect(() => {
     (
@@ -26,6 +27,7 @@ function App() {
                 withCredentials: true
             }).then(res => {
               setUsername(res.data.name);
+              setEmail(res.data.email);
             }).catch(error => {
                 if (error.response) {
                   console.log(error.response.data);
@@ -57,7 +59,7 @@ function App() {
       {/* If want to add side navbar just put <Navbar logout={logout} /> in the dashboard elements */}
       <Route path="/dashboard" element={<><BottomNavbar /> <Dashboard username={username} /></>} />
       <Route path="/live" element={<><BottomNavbar /> <Livepage /> </>} />
-      <Route path="/settings" element={<><BottomNavbar /> <Settingpage /></>} />
+      <Route path="/settings" element={<><BottomNavbar /> <Settingpage username={username} email={email}/></>} />
       <Route path="/about" element={<><BottomNavbar /> <Aboutpage /></>} />
       <Route path="/helpAndSupport" element={<><BottomNavbar /> <HNS /></>} />
       <Route path="/sendFeedback" element={<><BottomNavbar /> <SFeedback /></>} />
