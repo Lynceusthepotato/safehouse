@@ -9,12 +9,12 @@ const Footer = () => {
             <div className='cFooter'>
                 <div className='left'>
                     <h1> Company </h1>
-                    <Link to ='/Aboutus'> About us </Link>
-                    <Link to ='/TermNService'> Terms of Service </Link>
+                    <Link to ='/about'> About us </Link>
+                    <Link to ='/termOfUse'> Terms of Service </Link>
                 </div>
                 <div className='right'>
                     <h1> Help </h1>
-                        <Link to ='/Contactus'> Contact us </Link>
+                        <Link to ='/helpAndSupport'> Contact us </Link>
                         <Link to ='/'> How it works </Link>
                 </div>
             </div>

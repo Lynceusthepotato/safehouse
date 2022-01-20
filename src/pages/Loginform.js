@@ -69,7 +69,7 @@ const Loginform = ( {setUser} ) => {
         <div className="form-box">
             <Header />
             <form id= "LoginForm" onSubmit={onSubmit}>
-                <input type="text" className="input-field" placeholder= "Username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+                <input type="text" className="input-field" placeholder= "Email" name="Email" value={username} onChange={(e) => setUsername(e.target.value)} />
                 <input type="text" className="input-field" placeholder= "Password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <input type="submit" className="submit-btn" id="login" value= "Login"/>  
             </form>

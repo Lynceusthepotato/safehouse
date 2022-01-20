@@ -20,7 +20,7 @@ const Settingpage = ({username, email}) => {
                 <Link to="/about" className="Linkto"> About </Link>
                 <Link to="/helpAndSupport" className="Linkto"> Help and Support </Link>
                 <Link to="/sendFeedback" className="Linkto"> Send Feedback </Link>
-                <Link to="/frontpage" className="greenText Linkto"> Logout </Link>
+                <Link to="/" className="greenText Linkto"> Logout </Link>
             </div>
         </div>
     )
