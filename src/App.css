@@ -149,6 +149,26 @@ body{
   margin-left: 5%;
 }
 
+.notif{
+  overflow: hidden;
+  text-align: center;
+  background-color: rgb(231, 231, 231);
+  margin: 2%;
+  padding: 10px 0;
+  border-radius: 30px;
+}
+
+.notifText{
+  display: flex;
+  padding: 10px 0;
+  justify-content: space-around;
+}
+
+.notif img{
+  border-radius: 30px;
+}
+
+
 /* Login and Register */
 .form-box{
   width: 80%;
@@ -228,4 +248,8 @@ body{
   width: 60px;
   height: 60px;
   border-radius: 50%;
+}
+
+.aboutPage .Top, .Bottom{
+  background-color: white;
 }

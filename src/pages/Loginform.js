@@ -11,7 +11,7 @@ const Loginform = ( {setUser} ) => {
     // useEffect(() => {
     //     (
     //         async () => {
-    //             await axios.get('http://localhost:8000/api/user', {
+    //             await axios.get('http://localhost:5678/api/user', {
     //                 withCredentials: true
     //             }).then(res => {
     //                 if (res.status === 200){
@@ -40,7 +40,7 @@ const Loginform = ( {setUser} ) => {
 
         e.preventDefault()
 
-        await axios.post("http://localhost:8000/api/login",
+        await axios.post("http://localhost:5678/api/login",
             {
             email: username,
             password: password

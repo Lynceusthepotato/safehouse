@@ -1,7 +1,6 @@
 .BottomNav{
     bottom: 0;
     width: 100%;
-    position: fixed;
     text-align: center;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
     background-color: #ffffff;
