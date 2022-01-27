@@ -13,7 +13,7 @@ const Registerform = () => {
 
         e.preventDefault()
 
-        await axios.post("http://localhost:5678/api/register",
+        await axios.post("http://localhost:8888/api/register",
             {
             name: username,
             email: email,
@@ -26,7 +26,9 @@ const Registerform = () => {
             setIsRegister(isRegister => !isRegister)
             }
         }).catch(error => {
-            console.log(error, error.res)
+            console.log(error)
+            console.log(error.response.data)
+            console.log(error.response);
         })
           
     }

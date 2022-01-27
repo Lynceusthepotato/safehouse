@@ -6,7 +6,6 @@ import pic2 from '../pictures/Doorbell2.png';
 
 const Dashboard = ( username ) => {
     const [redirect, setRedirect] = useState(false)
-    const [img, setImg] = useState('')
     const [imgUrl, setImgUrl] = useState('https://newtestonlyjpg.s3.ap-southeast-1.amazonaws.com/')
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
@@ -16,7 +15,7 @@ const Dashboard = ( username ) => {
 
     const getData = async(e) => {
     
-        await axios.get('http://localhost:5678/api/picture'
+        await axios.get('http://localhost:8888/api/picture'
         ).then(res => {
             console.log(res.data);
             for(var i = 0; i < galPic.length; i++){
@@ -25,6 +24,18 @@ const Dashboard = ( username ) => {
                 let det = dt[0]
                 R[i].innerHTML = "Date: " + det + " Time: " + dt[2].replace('.jpg', '').replace('-', ':').replace('-', ':') ;
             }
+        }).catch(error => {
+            if (error.response) {
+              console.log(error.response.data);
+              console.log(error.response.status);
+              console.log(error.response.headers);
+              alert("You are not logged in")
+              setRedirect(redirect => !redirect)
+            } else if (error.request) {
+              console.log(error.request);
+            } else {
+              console.log(error.response)
+            }
         })
     }
     document.body.style.background = "#fff"
@@ -32,7 +43,7 @@ const Dashboard = ( username ) => {
     useEffect(() => {
         (
             async () => {
-                await axios.get('http://localhost:5678/api/user', {
+                await axios.get('http://localhost:8888/api/user', {
                     withCredentials: true
                 }).catch(error => {
                     if (error.response) {
@@ -44,13 +55,13 @@ const Dashboard = ( username ) => {
                     } else if (error.request) {
                       console.log(error.request);
                     } else {
-                      console.log(error, error.res)
+                      console.log(error.response)
                     }
                 })
             }
         )();
         getData();
-      }, [img]);
+      }, []);
 
 
     if (redirect) {
@@ -71,7 +82,7 @@ const Dashboard = ( username ) => {
                         </div>
                         <div className="R"> {"Date: "+ date + " Time: "+ time} </div>
                     </div>
-                    <img src = {imgUrl + img} className ="notifPic"/>
+                    <img src = {"bruh"} className ="notifPic"/>
                 </div>
                 <div className="notif">
                     <div className="notifText">
@@ -80,7 +91,7 @@ const Dashboard = ( username ) => {
                         </div>
                         <div className="R"> {"Date: "+ date + " Time: "+ time} </div>
                     </div>
-                    <img src = {imgUrl + img} className ="notifPic"/>
+                    <img src = {"bruh"} className ="notifPic"/>
                 </div>
                 <div className="notif">
                     <div className="notifText">
@@ -89,7 +100,7 @@ const Dashboard = ( username ) => {
                         </div>
                         <div className="R"> {"Date: "+ date + " Time: "+ time} </div>
                     </div>
-                    <img src = {imgUrl + img} className ="notifPic"/>
+                    <img src = {"bruh"} className ="notifPic"/>
                 </div>
                 <div className="notif">
                     <div className="notifText">
@@ -98,7 +109,7 @@ const Dashboard = ( username ) => {
                         </div>
                         <div className="R"> {"Date: "+ date + " Time: "+ time} </div>
                     </div>
-                    <img src = {imgUrl + img} className ="notifPic"/>
+                    <img src = {"bruh"} className ="notifPic"/>
                 </div>
                 <div className="notif">
                     <div className="notifText">
@@ -107,7 +118,7 @@ const Dashboard = ( username ) => {
                         </div>
                         <div className="R"> {"Date: "+ date + " Time: "+ time} </div>
                     </div>
-                    <img src = {imgUrl + img} className ="notifPic"/>
+                    <img src = {"bruh"} className ="notifPic"/>
                 </div>
                 <div className="notif">
                     <div className="notifText">
@@ -116,7 +127,7 @@ const Dashboard = ( username ) => {
                         </div>
                         <div className="R"> {"Date: "+ date + " Time: "+ time} </div>
                     </div>
-                    <img src = {imgUrl + img} className ="notifPic"/>
+                    <img src = {"bruh"} className ="notifPic"/>
                 </div>
                 <div className="notif">
                     <div className="notifText">
@@ -125,7 +136,7 @@ const Dashboard = ( username ) => {
                         </div>
                         <div className="R"> {"Date: "+ date + " Time: "+ time} </div>
                     </div>
-                    <img src = {imgUrl + img} className ="notifPic"/>
+                    <img src = {"bruh"} className ="notifPic"/>
                 </div>
                 <div className="notif">
                     <div className="notifText">
@@ -134,7 +145,7 @@ const Dashboard = ( username ) => {
                         </div>
                         <div className="R"> {"Date: "+ date + " Time: "+ time} </div>
                     </div>
-                    <img src = {imgUrl + img} className ="notifPic"/>
+                    <img src = {"bruh"} className ="notifPic"/>
                 </div>
                 <div className="notif">
                     <div className="notifText">
@@ -143,7 +154,7 @@ const Dashboard = ( username ) => {
                         </div>
                         <div className="R"> {"Date: "+ date + " Time: "+ time} </div>
                     </div>
-                    <img src = {imgUrl + img} className ="notifPic"/>
+                    <img src = {"bruh"} className ="notifPic"/>
                 </div>
                 <div className="notif">
                     <div className="notifText">
@@ -152,7 +163,7 @@ const Dashboard = ( username ) => {
                         </div>
                         <div className="R"> {"Date: "+ date + " Time: "+ time} </div>
                     </div>
-                    <img src = {imgUrl + img} className ="notifPic"/>
+                    <img src = {"bruh"} className ="notifPic"/>
                 </div>
                 <div className="notif">
                     <div className="notifText">
@@ -161,7 +172,7 @@ const Dashboard = ( username ) => {
                         </div>
                         <div className="R"> {"Date: "+ date + " Time: "+ time} </div>
                     </div>
-                    <img src = {imgUrl + img} className ="notifPic"/>
+                    <img src = {"bruh"} className ="notifPic"/>
                 </div>
             </div>
         </div>

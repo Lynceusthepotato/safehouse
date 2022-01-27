@@ -23,7 +23,7 @@ function App() {
   useEffect(() => {
     (
         async () => {
-            await axios.get('http://localhost:5678/api/user', {
+            await axios.get('http://localhost:8888/api/user', {
                 withCredentials: true
             }).then(res => {
               setUsername(res.data.name);
@@ -44,7 +44,7 @@ function App() {
   });
 
   const logout =  async () => {
-    await fetch('http://localhost:5678/api/logout', {
+    await fetch('http://localhost:8888/api/logout', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       credentials: 'include',
